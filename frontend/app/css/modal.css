@@ -1,0 +1,208 @@
+.modal-item {
+    position: absolute;
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+    height: 250px;
+    z-index: 100;
+    font-size: 14px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    touch-action: none; /* For touch devices */
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.modal-close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    transform: translate(50%, -50%);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-content-item {
+    height: 210px;
+}
+
+.modal-content-item > p {
+    margin: 0 auto 10px;
+}
+
+.inventory-item-button {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    left: 0;
+}
+
+.inventory-item-button > button {
+    font-size: 12px;
+    background: #232222;
+    margin: 5px;
+}
+
+.modal-content .row {
+    display: flex;
+    align-items: center;
+    background-color: #0000006b;
+    /*height: 30px;*/
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding-left: 5px;
+    flex-direction: column;
+}
+
+.modal-content .row:hover {
+    background-color: rgba(39, 39, 39, 0.42);
+}
+
+.modal-header {
+    padding: 5px;
+    cursor: grab; /* Указывает, что элемент можно перетаскивать */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-header .modal-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.info {
+    top: auto;
+    right: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+    color: #D1D1D1;
+    min-width: 150px;
+    min-height: 150px;
+}
+
+.popup {
+    z-index: 3;
+    position: absolute;
+    color: #aaa;
+    background-color: #1e1e1e;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-sizing: border-box;
+    max-height: 75%;
+    padding: 1.6em .5em 0.5em .5em;;
+    max-width: 345px;
+    min-width: 345px;
+}
+
+.modal-content {
+    width: 100%;
+}
+
+.close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    transform: translate(50%, -50%);
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quantity-selector > button {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 0;
+}
+
+.quantity-selector > button:hover {
+    background-color: #d6d6d6;
+}
+
+.quantity-selector > input {
+    width: 33px;
+    height: 33px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /*transform: translate(-50%, -50%);*/
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(48, 48, 48, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 8px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-actions .btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+button.resource-mine {
+    background: #434343;
+}

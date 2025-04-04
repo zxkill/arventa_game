@@ -1,0 +1,37 @@
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    color: #c1c1c1;
+}
+
+#settings-form input[type="checkbox"] {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+#settings-form .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#settings-form button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#settings-form button:hover {
+    background-color: #45a049;
+}

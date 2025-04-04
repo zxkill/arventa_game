@@ -1,0 +1,101 @@
+services:
+  backend:
+    image: python:3.13.1-slim
+    container_name: backend
+    networks:
+      - my_network
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend-build:
+    image: node:22.12.0-slim
+    networks:
+      - my_network
+    container_name: frontend-build
+    working_dir: /app
+    ports:
+      - "127.0.0.1:5173:5173" # Для разработки с Vite
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: sh -c "npm install && npm run build"
+
+  frontend:
+    container_name: frontend
+    networks:
+      - my_network
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"   # HTTP
+      - "44343:443" # HTTPS
+    volumes:
+      - ./frontend/dist:/usr/share/nginx/html:ro
+      - ./frontend/certs:/etc/nginx/ssl:ro
+      - ./frontend/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+
+  db:
+    image: postgis/postgis:17-3.5
+    networks:
+      - my_network
+    container_name: db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"
+
+  redis:
+    image: redis:7.4
+    networks:
+      - my_network
+    container_name: redis
+    ports:
+      - "127.0.0.1:6379:6379"
+
+  worker:
+    image: python:3.13.1-slim
+    container_name: worker
+    networks:
+      - my_network
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    depends_on:
+      - db
+      - redis
+    command: sh -c "celery -A app.tasks worker --loglevel=info & celery -A app.tasks beat --loglevel=info"
+
+volumes:
+  db_data:
+
+networks:
+  my_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.20.0.0/16"

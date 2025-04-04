@@ -1,0 +1,131 @@
+/* Общие стили для контейнера чата */
+.chat-container {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 280px;
+    max-height: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.chat-container.active {
+    transform: translateY(0);
+    opacity: 0.5;
+}
+
+/* Заголовок чата */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4d4d4d;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.chat-toggle {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Контейнер для сообщений */
+.chat-body {
+    display: none;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0px 5px 0px 5px;
+    background-color: #ccc;
+    max-height: 300px;
+}
+
+.active .chat-body {
+    display: block;
+}
+
+.chat-message {
+    font-size: 12px;
+    color: #333;
+}
+
+.chat-user {
+    font-weight: bold;
+    overflow-x: hidden;
+    word-break: break-all;
+    margin: 5px;
+}
+
+.chat-user span {
+    font-weight: normal;
+}
+
+.chat-text {
+    display: block;
+    margin-top: 5px;
+}
+
+.chat-time {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.chat-input {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5;
+    background-color: #ccc;
+    border-radius: 0 0 10px 10px;
+}
+
+.active .chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Стили для иконки чата (при свернутом состоянии) */
+.chat-container:not(.active) {
+    background-color: #4d4d4d;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-header span {
+    display: none; /* Скрываем текст в свернутом состоянии */
+}
+
+.chat-header .chat-toggle {
+    display: block;
+}
+
+/* Прокрутка сообщений */
+.chat-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.chat-body::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}

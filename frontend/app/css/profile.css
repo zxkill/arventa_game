@@ -1,0 +1,97 @@
+#profile-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    /*padding: 8px 16px;*/
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#save-btn {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#cancel-btn {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-row input {
+    padding: 5px;
+    height: 30px;
+    width: 100%;
+}
+
+.profile-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+#change-avatar-btn {
+    margin-top: 10px;
+    padding: 3px 0;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#avatar-selection {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+#avatar-selection img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+#avatar-selection img:hover {
+    border-color: #007bff;
+}

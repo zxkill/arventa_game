@@ -1,0 +1,15 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "6.0.6",
+    "rollup-plugin-watch": "1.0.4",
+    "toastify-js": "1.12.0",
+    "ol": "10.3.1"
+  }
+}

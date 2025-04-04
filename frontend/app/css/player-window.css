@@ -1,0 +1,119 @@
+.player-window {
+    background-color: #1c1c1c;
+    display: grid;
+    grid-template-areas:
+        "equipment attributes"
+        "progress-weight progress-weight"
+        "inventory inventory";
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    max-width: 400px;
+}
+
+.equipment {
+    grid-area: equipment;
+    display: grid;
+    grid-template-rows: repeat(4, 50px);
+    grid-template-columns: repeat(3, 50px);
+    gap: 10px;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.equipment > div {
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.equipment img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.attributes {
+    grid-area: attributes;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 5px;
+    padding-top: 2px;
+    position: relative;
+}
+
+.attribute {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.attribute > span {
+    position: absolute;
+    right: 5px;
+}
+
+.progress-weight {
+    grid-area: progress-weight;
+    display: flex;
+    background-color: #2d2d2d;
+    position: relative;
+    height: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.progress-weight .weight {
+    height: 100%;
+    background-color: #5f5a67;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
+.progress-weight-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 11px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.inventory {
+    grid-area: inventory;
+    background-color: #222;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 50px);
+    grid-template-rows: repeat(17, 50px);
+    gap: 4px;
+    justify-content: center;
+}
+
+.inventory-grid .reward-item {
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 5px;
+}
+
+.silver {
+    color: #6c757d;
+    background-image: url(/img/icons/silver.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding-left: 20px;
+    background-position-y: center;
+    font-size: 13px;
+}

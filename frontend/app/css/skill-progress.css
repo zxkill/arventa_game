@@ -1,0 +1,46 @@
+.item-category {
+    padding: 0 5px 5px 5px;
+    background-color: #292929;
+    border-radius: 8px;
+}
+
+.item-category h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: 5px;
+    color: #fff;
+}
+
+.item-progress {
+    /*margin-bottom: 15px;*/
+}
+
+.item-name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.level-info {
+    width: 45px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.progress-container .progress-bar {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.skill-window {
+    overflow-y: scroll;
+    height: 500px;
+}

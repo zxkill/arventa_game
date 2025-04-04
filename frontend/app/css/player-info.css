@@ -1,0 +1,9 @@
+.player-info {
+    margin: 10px;
+    line-height: 2;
+}
+
+.player-info .info {
+    margin-top: 20px;
+    color: #aaa;
+}

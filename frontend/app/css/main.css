@@ -1,0 +1,574 @@
+* {
+    -webkit-user-select: none; /* Для Safari */
+    -moz-user-select: none; /* Для Firefox */
+    -ms-user-select: none; /* Для Internet Explorer/Edge */
+    user-select: none; /* Стандартное свойство */
+}
+
+html {
+    touch-action: manipulation;
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Если нужно разрешить выделение текста в определённых элементах */
+.allow-select {
+    -webkit-user-select: text; /* Для Safari */
+    -moz-user-select: text; /* Для Firefox */
+    -ms-user-select: text; /* Для Internet Explorer/Edge */
+    user-select: text; /* Стандартное свойство */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    touch-action: manipulation;
+    overflow: hidden;
+}
+
+#auth-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form#auth-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#register-fields {
+    width: 100%;
+}
+
+#confirm-password-field {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #191919;
+}
+
+.modal-content > button {
+    margin-bottom: 10px;
+}
+
+#toggle-link {
+    margin-top: 10px;
+    color: #555;
+}
+
+#toggle-link a {
+    color: #5a67d8;
+    text-decoration: none;
+}
+
+#toggle-link a:hover {
+    text-decoration: underline;
+}
+
+#map .ol-rotate {
+    opacity: 1;
+    visibility: visible;
+    top: 50%;
+    left: .5em;
+    right: unset;
+    transform: translateY(-200%);
+}
+
+#map {
+    width: 100%;
+    height: 100%
+}
+
+.bottom-container {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    width: 185px;
+    pointer-events: none;
+}
+
+.bottom-container button {
+    pointer-events: all;
+}
+
+#toggle-follow {
+    opacity: .5;
+}
+
+#toggle-follow[data-active="true"] {
+    opacity: 1;
+}
+
+.ol-zoom, .ol-scale-line {
+    display: none;
+}
+
+.ol-control button {
+    width: 1.375em;
+    height: 1.375em;
+    color: #ffffff;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    opacity: 0.5;
+}
+
+.ol-control button:hover {
+    color: #ffffff;
+    background-color: #1e1e1e;
+}
+
+.status-bar {
+    position: absolute;
+    top: .25em;
+    left: .25em;
+    max-width: 300px;
+    pointer-events: none;
+    color: #aaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e1e1e;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 8px;
+    width: 180px;
+    opacity: 0.85;
+}
+
+.top-section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    border: 2px solid #666;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details {
+    flex: 1;
+}
+
+.name {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.bar {
+    position: relative;
+    height: 10px;
+    background-color: #333;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+
+.bar .health {
+    height: 100%;
+    background-color: #ff4d4d;
+    width: 100%; /* Health percentage */
+}
+
+.bar .energy {
+    height: 100%;
+    background-color: #1574ff;
+    width: 100%; /* Energy percentage */
+}
+
+#user_health_digital, #user_energy_digital {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 11px;
+    color: #fff;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    height: 12px;
+}
+
+.button-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.button-section .button {
+    width: 35px;
+    height: 35px;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    pointer-events: all;
+    padding: 0;
+    position: relative;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.button i {
+    font-size: 24px;
+    color: white;
+}
+
+.button .settings {
+    background: no-repeat url('/img/icons/button/settings.png?1');
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.button .mail {
+    background: no-repeat url('/img/icons/button/mail.png?1');
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.button .progress {
+    background: no-repeat url('/img/icons/button/progress.png?1');
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.button .stats-portal {
+    background: no-repeat url('/img/icons/button/stats.png?1');
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.button .follow {
+    background: no-repeat url('/img/icons/button/follow.png?1');
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.button .crafting {
+    background: no-repeat url('/img/icons/button/crafting.png?1');
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+}
+
+.button .market {
+    background: no-repeat url('/img/icons/button/market.png?1');
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+}
+
+.button .quest {
+    background: no-repeat url('/img/icons/button/quest_book.png?1');
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    color: #a6ff00;
+    font-size: 16px;
+}
+
+.notification-badge {
+    position: absolute;
+    background-color: #8fdb01;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 50%;
+    border: 2px solid #8b8d00;
+    animation: blink 3s 10;
+    right: 0;
+    top: 0;
+}
+
+.notification-badge-mail {
+    position: absolute;
+    background-color: #8fdb01;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 50%;
+    border: 2px solid #8b8d00;
+    right: 0;
+    top: 0;
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.3;
+    }
+}
+
+.button .inventory-icon {
+    background: no-repeat url('/img/icons/button/inventory.png?1');
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.collapsible-header {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+}
+
+.collapsible-content {
+    display: none; /* Скрыть текст по умолчанию */
+    overflow: hidden; /* Прячем переполнение, чтобы анимация не ломалась */
+    height: 0; /* Текст скрыт по высоте */
+    transition: height 1s ease-out; /* Плавное изменение высоты */
+}
+
+.row.open .collapsible-content {
+    display: block;
+    height: 300px;
+    transition: height 1s ease-in; /* Плавное открытие */
+    background-color: #333;
+    margin: 0 5px 5px 0;
+    padding: 0 5px 5px 5px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.quest-rewards {
+    margin-top: 10px;
+}
+
+.quest-rewards h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.reward-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.reward-item {
+    position: relative;
+}
+
+.reward-icon-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.reward-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.reward-quantity {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 11px;
+    padding: 1px 4px;
+    border-radius: 50%;
+}
+
+.reward-stats {
+    font-size: 16px;
+}
+
+.reward-stats div {
+    margin-bottom: 5px;
+}
+
+.reward-stats span {
+    font-weight: bold;
+}
+
+.reward-experience {
+    color: #28a745; /* зеленый для опыта */
+}
+
+.reward-money span {
+    color: #ffc107; /* золотой для денег */
+}
+
+.reward-money .gold-amount {
+    background-image: url('/img/icons/gold.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding-left: 25px;
+}
+
+.reward-money .silver-amount {
+    color: #6c757d; /* серый для серебра */
+    background-image: url('/img/icons/silver.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    padding-left: 25px;
+}
+
+/* Кнопка отмены квеста */
+.cancel-quest-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #dc3545; /* красный цвет */
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.cancel-quest-button:hover {
+    background-color: #b02a37;
+}
+
+.complete-quest-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #4d5700;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.complete-quest-button:hover {
+    background-color: #6b7900;
+}
+
+.button-access {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #007700;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.button-access:hover {
+    background-color: #2a982a;
+}
+
+.btn-secondary {
+    background-color: #ddd;
+    color: #333;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img.lazy.loaded {
+    opacity: 1;
+}
+

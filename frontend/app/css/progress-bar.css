@@ -1,0 +1,28 @@
+.progress-bar {
+    position: relative;
+    width: 100%;
+    background-color: #595959;
+    border-radius: 4px;
+    height: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    width: 0;
+    height: 10px;
+    border-radius: 4px;
+    background-color: #249702;
+}
+
+.progress-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 11px;
+    color: #ffffff;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    height: 12px;
+}

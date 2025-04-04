@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арвента</title>
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="manifest" href="/assets/manifest-ZXbyIVDb.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script type="module" crossorigin src="/assets/api-BXiN5zbP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/api-DsVnBTSs.css">
+</head>
+<body>
+<div id="app">
+    <div id="auth-container">
+        <form id="auth-form">
+            <div id="register-fields" style="display: none;">
+                <label for="username">Имя пользователя</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" required>
+            <div id="confirm-password-field" style="display: none;">
+                <label for="confirm-password">Подтверждение пароля</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+            </div>
+            <button type="submit" id="auth-button">Войти</button>
+            <p id="toggle-link"><a href="#" id="toggle-auth">Зарегистрироваться</a></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
