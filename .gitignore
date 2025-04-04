@@ -4,6 +4,8 @@
 *.log
 *.zip
 db_data
+celerybeat-schedule
 celerybeat-schedule*
 cache
-__pycache__
+__pycache__/
+dist/
