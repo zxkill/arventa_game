@@ -2,4 +2,8 @@
 .env
 *.pem
 *.log
+*.zip
 db_data
+celerybeat-schedule*
+cache
+__pycache__
